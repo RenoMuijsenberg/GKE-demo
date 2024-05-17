@@ -36,4 +36,4 @@ jobs:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
           gcloud container clusters get-credentials autopilot-kubernetes-demo --region europe-west4
-          kubeclt apply -f resources.yml
+          kubectl apply -f resources.yml

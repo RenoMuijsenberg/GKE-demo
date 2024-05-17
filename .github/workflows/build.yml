@@ -26,5 +26,5 @@ jobs:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
           gcloud auth configure-docker europe-west4-docker.pkg.dev
-          docker build -t europe-west4-docker.pkg.dev/$GOOGLE_PROJECT/kubernetes-demo/python:3.12-slim .
-          docker push europe-west4-docker.pkg.dev/$GOOGLE_PROJECT/kubernetes-demo/python:3.12-slim
+          docker build -t europe-west4-docker.pkg.dev/$GOOGLE_PROJECT/kubernetes-demo/python:latest .
+          docker push europe-west4-docker.pkg.dev/$GOOGLE_PROJECT/kubernetes-demo/python:latest

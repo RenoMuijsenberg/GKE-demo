@@ -3,7 +3,7 @@ name: Deploy to Flask to GKE
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   deploy:
@@ -28,3 +28,8 @@ jobs:
           gcloud auth configure-docker europe-west4-docker.pkg.dev
           docker build -t europe-west4-docker.pkg.dev/$GOOGLE_PROJECT/kubernetes-demo/python:latest .
           docker push europe-west4-docker.pkg.dev/$GOOGLE_PROJECT/kubernetes-demo/python:latest
+
+      - name: Deploy to GKE
+        run: |
+          gcloud container cluster get-credentials autopilot-kubernetes-demo --region europe-west4
+          kubeclt apply -f resources.yml

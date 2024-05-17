@@ -30,3 +30,5 @@ spec:
       containers:
       - name: python
         image: europe-west4-docker.pkg.dev/secret-willow-423606-j1/kubernetes-demo/python:latest
+        ports:
+        - containerPort: 80
